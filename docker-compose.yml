@@ -1,0 +1,18 @@
+version: "3"
+services:
+  aws-es-proxy-kibana:
+    container_name: aws-es-proxy-kibana
+    build:
+      context: .
+      dockerfile: ./kibana-proxy.Dockerfile
+    image: aws-es-proxy-kibana:latest
+    ports:
+      - 9200:9200
+  dejavu:
+    container_name: dejavu
+    build:
+      context: .
+      dockerfile: ./dejavu.Dockerfile
+    image: dejavu:custom
+    ports:
+    - 1358:1358
