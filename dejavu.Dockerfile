@@ -2,7 +2,7 @@ FROM node:alpine
 RUN apk add --no-cache git
 RUN apk add --no-cache openssh
 WORKDIR /data
-RUN git clone --branch dev https://github.com/l0l3r/dejavu.git /dejavu
+RUN git clone --branch dev https://github.com/l0l3r/dejavu-1.git /dejavu
 WORKDIR /dejavu
 RUN git submodule init && git submodule sync && git submodule update --recursive --remote
 RUN yarn
